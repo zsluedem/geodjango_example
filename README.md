@@ -1,8 +1,10 @@
-#django geo应用教程
+django geo应用教程
+==========
 
 `参考资料：https://docs.djangoproject.com/en/1.11/ref/contrib/gis/tutorial/`
 
-##介绍
+介绍
+-------
 GeoDjango是Django的一个包含的contrib模块，是一个世界范围地理Web构件。主要有以下特点：
 
 
@@ -11,14 +13,17 @@ GeoDjango是Django的一个包含的contrib模块，是一个世界范围地理W
 3. 高级封装的python api操作gis等数据的不同数据形式
 4. 从admin编辑地理数据
 
-##set up
-### 创建一个空间数据库
+set up
+=======
+创建一个空间数据库
+--------------
 通常没有什么特别的set up，就像普通工程那样搭建数据库
 
 * [安装PostGIS](https://docs.djangoproject.com/en/1.11/ref/contrib/gis/install/postgis/)
 * [安装SpatiaLite](https://docs.djangoproject.com/en/1.11/ref/contrib/gis/install/spatialite/)
 
-###创建一个新工程文件
+创建一个新工程文件
+-----------
 用django-amin创建新工程
 `$ django-admin startproject geodjango`
 
@@ -29,7 +34,8 @@ $ cd geodjango
 $ python manage.py startapp world
 ```
 
-###设置settings.py
+设置settings.py
+-------
 编辑settings.py里面的数据库设置：
 
 ```python
@@ -57,9 +63,11 @@ INSTALLED_APPS = [
 ]
 ```
 
-##Geographic Data
+Geographic Data
+=======
 
-###世界边界
+世界边界
+----------
 世界边界数据保存在一个[zip file](http://thematicmapping.org/downloads/TM_WORLD_BORDERS-0.3.zip).下载并解压
 
 ```
@@ -77,7 +85,8 @@ $ cd ../..
 * .dbf:保存非地理信息内容的数据库文件（int 和 char）
 * .prj:包含保存在shapefile里面空间指向信息
 
-##使用ogrinfo测试空间数据
+使用ogrinfo测试空间数据
+----------
 GDAL 中的ogrinfo可以用来检测shapefile里面的数据
 
 ```
@@ -117,8 +126,10 @@ LON: Real (8.3)
 LAT: Real (7.3)
 ```
 
-##地理模型
-###定义一个geographic model
+地理模型
+=======
+定义一个geographic model
+----------
 
 ```python
 from django.contrib.gis.db import models
