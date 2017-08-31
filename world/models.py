@@ -18,7 +18,7 @@ class WorldBorder(models.Model):
     lat = models.FloatField()
 
     # GeoDjango-specific: a geometry field (MultiPolygonField)
-    mpoly = models.MultiPolygonField(null=True)
+    mpoly = models.MultiPolygonField(null=True,blank=True)
 
     # Returns the string representation of the model.
     def __str__(self):              # __unicode__ on Python 2
