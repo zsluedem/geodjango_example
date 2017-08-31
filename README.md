@@ -41,9 +41,8 @@ $ python manage.py startapp world
 ```python
 DATABASES = {
     'default': {
-         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-         'NAME': 'geodjango',
-         'USER': 'geo',
+         'ENGINE': 'django.contrib.gis.db.backends.spatialite',
+         'NAME': 'test.db',
     },
 }
 ```
@@ -156,4 +155,6 @@ class WorldBorder(models.Model):
     def __str__(self):              # __unicode__ on Python 2
         return self.name
 ```
+
+
 
